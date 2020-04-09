@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head th:insert="fragments/head(title='Cliente - Página Inicial')">
+	<meta charset="utf-8">
+</head>
+
+<body>
+  <header th:insert="fragments/header(opc=0)"/>
+
+  <div class="card-header margin-top">LISTA DE FILMES</div>
+  <table class="table table-sm">
+    <thead>
+      <tr>
+        <th scope="col">TÍTULO</th>
+        <th scope="col">DURAÇÃO</th>
+        <th scope="col">CATEGORIA</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+			<tr th:each="fita : ${objetos}">
+				<td th:text="${fita.filme.titulo}"></td>
+				<td th:text="${fita.filme.duracao}"></td>
+				<td th:text="${fita.filme.categoria.nome}"></td>
+				<td><a th:href="@{/usuario/{id}/removerFilme/{idfita}(id=${id}, idfita=${fita.id})}">Devolver</a></td>
+			</tr>
+	</tbody>
+  </table>
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

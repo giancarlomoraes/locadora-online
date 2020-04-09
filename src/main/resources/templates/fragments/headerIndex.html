@@ -1,0 +1,19 @@
+<meta charset="utf-8">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="">Locadora Online</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+		<ul class="navbar-nav mr-auto">
+			<li th:class="${opc} == 0 ? 'nav-item active' : 'nav-item'">
+				<a class="nav-link" th:href="@{/}">Cliente</a>
+			</li>
+			<li th:class="${opc} == 1 ? 'nav-item active' : 'nav-item'">
+				<a class="nav-link" th:href="@{/admin}">Admin</a>
+			</li>		
+		</ul>
+	</div>
+  </nav>

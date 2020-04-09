@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head th:insert="fragments/head(title='Cliente - Locar Filme')">
+	<meta charset="utf-8">
+</head>
+
+<body>
+  <header th:insert="fragments/header(opc=1)"/>
+
+  <main class="my-form">
+    <div class="cotainer">
+      <div class="row justify-content-center">
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-header margin-top">LOCAR FILMES</div>
+            <div class="card-body">
+              <ul class="list-group" th:each="filme: ${objetos}">
+              	<li class="list-group-item">
+                  <u th:text="${filme.titulo}"></u>
+                  <br> <a th:href="@{/usuario/{id}/locarFilme/reservar/{idfilme}(id=${id}, idfilme=${filme.id})}">Locar Filme</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script th:src="@{/vendor/jquery/jquery.min.js}"></script>
+  <script th:src="@{/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+</body>
+
+</html>

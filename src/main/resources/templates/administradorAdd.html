@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+<head th:insert="fragments/headFormularios(title='Admin - Editar Cliente')">
+	<meta charset="utf-8">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" th:href="@{/administrador}">Locadora Online</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    <main class="my-form">
+        <div class="cotainer">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header margin-top">Editar</div>
+                        <div class="card-body">
+                            <form th:object="${objeto}" th:action="@{/administrador}" method="post">
+                            	<input type="hidden" th:field="*{id}" />
+                                <div class="form-group row">
+                                    <label for="full_name" class="col-md-4 col-form-label text-md-right">Nome</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="full_name" th:field="*{prenome}" maxlength="20" class="form-control" required autofocus>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="full_name"
+                                        class="col-md-4 col-form-label text-md-right">Sobrenome</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="full_name" th:field="*{sobrenome}" maxlength="50" class="form-control" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="email_address"
+                                        class="col-md-4 col-form-label text-md-right">Email</label>
+                                    <div class="col-md-6">
+                                        <input type="email" id="email_address" th:field="*{email}" maxlength="50" class="form-control" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="phone_number"
+                                        class="col-md-4 col-form-label text-md-right">Telefone</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="phone_number" th:field="*{telefone}" maxlength="11" class="form-control" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="present_address"
+                                        class="col-md-4 col-form-label text-md-right">Endereço</label>
+                                    <div class="col-md-6">
+                                        <input type="text" id="present_address" th:field="*{endereco}" maxlength="100" class="form-control" required>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 offset-md-4">
+                                    <button class="btn btn-primary" type="submit">Editar</button>
+                                </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</body>
+
+</html>

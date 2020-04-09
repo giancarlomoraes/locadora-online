@@ -1,0 +1,26 @@
+<meta charset="utf-8">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/administrador">Locadora Online - Admin</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+		<ul class="navbar-nav mr-auto">
+			<li th:class="${opc} == 0 ? 'nav-item active' : 'nav-item'">
+				<a class="nav-link" th:href="@{/administrador}">Página Inicial</a>
+			</li>
+			<li th:class="${opc} == 1 ? 'nav-item active' : 'nav-item'">
+				<a class="nav-link" th:href="@{/administrador/filmes}">Lista de Filmes</a>
+			</li>
+			<li th:class="${opc} == 2 ? 'nav-item active' : 'nav-item'">
+				<a class="nav-link" th:href="@{/administrador/categorias}">Lista de Categorias</a>
+			</li>		
+		</ul>
+	</div>
+    
+    <a href="/">
+      <button type="button" class="btn btn-primary">Logout</button>
+    </a>
+  </nav>

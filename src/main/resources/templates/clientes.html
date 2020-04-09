@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:insert="fragments/head(title='Admin - Página Inicial')">
+	<meta charset="utf-8">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" th:href="@{/}">Locadora Online</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+
+  <div class="card-header margin-top">LISTA DE CLIENTES <div><a th:href="@{/clientes/add}"> Cadastrar Novo Cliente </a></div></div>
+  <table class="table table-sm">
+    <thead>
+      <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">Sobrenome</th>
+        <th scope="col">Email</th>
+        <th scope="col">Telefone</th>
+        <th scope="col">Endereço</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+			<tr th:each="cliente : ${objetos}">
+				<td th:text="${cliente.prenome}"></td>
+				<td th:text="${cliente.sobrenome}"></td>
+				<td th:text="${cliente.email}"></td>
+				<td th:text="${cliente.telefone}"></td>
+				<td th:text="${cliente.endereco}"></td>
+				<td><a th:text="${cliente.id}" th:href="@{/usuario/{id}(id=${cliente.id})}"></a></td>
+			</tr>
+	</tbody>
+  </table>
+
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:insert="fragments/head(title='Locadora Online')">
+	<meta charset="utf-8">
+</head>
+
+<body>
+
+  <header th:insert="fragments/headerIndex(opc=1)"/>
+
+  <!-- Masthead -->
+  <header class="masthead text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <h1 class="mb-5">Faça controle de seus clientes</h1>
+        </div>
+        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+        </div>
+      </div>
+      <div class="row margin-top">
+        <div class="col-md-12">
+          <a th:href="@{/administrador}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">
+            Módulo do administrador
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
